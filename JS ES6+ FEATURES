@@ -1,0 +1,54 @@
+Q: HOW THE JS CODE WORKS ?
+  * Everything in the javascript happens inside an execution context 
+-->Here the execution context will be consider a bigbox with the separation of MEMORY COMPONENT and the second one is CODE COMPONENT(CODE COMPONENT ALSO CALLED AS THREAD OF EXECUTION)
+* In memory allocation the server first allocates the memory of key:values , a: 10 , fn:{....} (MEMORY COMPONENT IS ALSO CALLED AS VARIABLE ENVIRONMENT)
+*in the code component the code will be executed at single line 
+--JAVASCRIPT IS A SYNCHRONOUS SINGLE-THREADED LANGUAGE--
+this defines syncronously means orderly the code will be executed only one command after another command like a thread format 
+
+Q: WHAT HAPPENS BEHIND THE ENGINE WHEN THE CODE IS EXECUTED?  (ENGINES like V8 in Chrome, SpiderMonkey in Firefox, or Chakra in Edge) 
+  * Behind the scenes, JavaScript engines manage several stages to transform code into efficient machine-level instructions while ensuring that memory is managed and asynchronous tasks are handled. Here’s a simplified flow:
+-->Parsing and Lexical Analysis: Converts code into tokens and an Abstract Syntax Tree.
+-->Compilation: Transforms the AST into bytecode, with optimizations.
+-->Execution: Executes the bytecode, further optimizing frequently used code.
+-->Event Loop: Manages asynchronous tasks and their execution.
+-->Garbage Collection: Cleans up memory used by objects no longer in use.
+This complex process allows JavaScript to execute efficiently, making it suitable for a wide range of web and server applications.
+
+Q: HOW TO HOST VARIABLES AND FUNCTIONS IN JAVASCRIPT?
+  *In JavaScript, hoisting is the behavior where variable and function declarations are moved to the top of their containing scope (either the global scope or the function scope) during the compilation phase,
+  before the code is executed. This means that you can use functions and variables before they are declared in the code.
+1. Hoisting with var:
+console.log(x); // Output: undefined
+var x = 5;
+console.log(x); // Output: 5
+var x is hoisted to the top, but it is initialized to undefined until the assignment x = 5.
+This means that before the assignment, x is defined but has the value undefined.
+2. Hoisting with let and const:
+  console.log(y); // ReferenceError: Cannot access 'y' before initialization
+let y = 10;
+
+console.log(z); // ReferenceError: Cannot access 'z' before initialization
+const z = 20;
+Both y and z are hoisted to the top of their block scope, but they are not initialized, which is why trying to access them before their declaration causes an error.
+3. Hoisting with Function Declarations:
+sayHello(); // Output: Hello!
+
+function sayHello() {
+    console.log("Hello!");
+}
+The entire sayHello function declaration is hoisted, allowing it to be called before it appears in the code.
+4. Hoisting with Function Expressions and Arrow Functions:
+console.log(greet); // Output: undefined
+var greet = function () {
+    console.log("Hi!");
+};
+greet(); // Output: Hi!
+var greet is hoisted and initialized to undefined.
+The function assignment is not hoisted, so calling greet before the assignment results in undefined.
+Example with let or const and function expressions or arrow functions:
+console.log(sayHi); // ReferenceError: Cannot access 'sayHi' before initialization
+let sayHi = () => console.log("Hello!");
+sayHi is hoisted but uninitialized, leading to a ReferenceError if accessed before the assignment.
+  
+
