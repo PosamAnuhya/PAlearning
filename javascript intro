@@ -1,0 +1,14 @@
+js:
+    It is a high level language and also it is a single threaded language that means it performs single time execution .
+      it Adds inteactivity to the user and also for the dynamic features .
+  * js is the framework in java but not library
+      framework: Defines the complete architecture of the application and the main drawback of this is there is some certain limitations to run this architecture
+      libraries:it is the invention from the framework for the better experience from the user to work the application fastly and also mainly the loading time will be less compared to framework
+      there is no need certain limitations to perform in this .not defined any specific way .
+DOM ARCHITECTURE:
+    there are two types of document object model 1.real DOM
+    * A tree-like structure of HTML nodes representing the layout and structure of the web page.
+      2.Virtual DOM
+      * Only generates the important components in the application
+      *  The Virtual DOM is an abstract representation of the Real DOM, implemented in memory. It acts as a lightweight copy of the Real DOM but doesn’t directly interact with the page’s display.
+      
