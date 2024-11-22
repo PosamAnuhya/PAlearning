@@ -50,5 +50,6 @@ Example with let or const and function expressions or arrow functions:
 console.log(sayHi); // ReferenceError: Cannot access 'sayHi' before initialization
 let sayHi = () => console.log("Hello!");
 sayHi is hoisted but uninitialized, leading to a ReferenceError if accessed before the assignment.
-  
+5.uses of This Keyword:
+it will point an object 
 
